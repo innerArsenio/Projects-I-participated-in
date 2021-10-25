@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        <div class="item" id="boots">
+            <img src="boots.png" alt="boots">
+
+                <div class="itemName">
+                    Ботинки женские
+                </div>
+
+                <div class="itemDescription">
+                Модные ботинки из натурального нубука. Согреют Ваши ноги во время зимних морозов
+                </div>
+
+                <div class="priceAndCart">
+                    <div class="price">
+                        5 000 <span>руб. </span>
+                    </div>
+
+                    <div class="cart">
+                        <img src="test.png" alt="boots">
+                    </div>
+                </div>
+        </div>
+
+    
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).on("load",function(){
+           for (var i=0; i<2; i++){
+            var it= $("#boots").clone() ;
+           $("#wrapper").append(it);
+           } 
+           
+        });
+    </script>
+    
+    
+</body>
+
+
+
+</html>
