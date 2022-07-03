@@ -1,0 +1,284 @@
+Multi_Synth_pl(
+  (network): Model_Check(
+    (text_decoder): Encoder(
+      (embedding): Embeddings(
+        (lut): Embedding(100, 128)
+      )
+      (position_encoder): PositionalEncoding(
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (layers): ModuleList(
+        (0): EncoderLayer(
+          (att): Att_Choice(
+            (att): Softmax_att(
+              (att): MultiheadAttention(
+                (out_proj): _LinearWithBias(in_features=128, out_features=128, bias=True)
+              )
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): EncoderLayer(
+          (att): Att_Choice(
+            (att): Softmax_att(
+              (att): MultiheadAttention(
+                (out_proj): _LinearWithBias(in_features=128, out_features=128, bias=True)
+              )
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): EncoderLayer(
+          (att): Att_Choice(
+            (att): Softmax_att(
+              (att): MultiheadAttention(
+                (out_proj): _LinearWithBias(in_features=128, out_features=128, bias=True)
+              )
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (3): EncoderLayer(
+          (att): Att_Choice(
+            (att): Softmax_att(
+              (att): MultiheadAttention(
+                (out_proj): _LinearWithBias(in_features=128, out_features=128, bias=True)
+              )
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+    )
+    (audio_encoder): Encoder(
+      (position_encoder): PositionalEncoding(
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (layers): ModuleList(
+        (0): EncoderLayer(
+          (att): Att_Choice(
+            (att): SelfAttention(
+              (fast_attention): FastAttention(
+                (kernel_fn): ReLU()
+              )
+              (local_attn): LocalAttention(
+                (dropout): Dropout(p=0.1, inplace=False)
+                (rel_pos): RelativePositionalEmbedding()
+              )
+              (to_q): Linear(in_features=128, out_features=128, bias=True)
+              (to_k): Linear(in_features=128, out_features=128, bias=True)
+              (to_v): Linear(in_features=128, out_features=128, bias=True)
+              (to_out): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): EncoderLayer(
+          (att): Att_Choice(
+            (att): SelfAttention(
+              (fast_attention): FastAttention(
+                (kernel_fn): ReLU()
+              )
+              (local_attn): LocalAttention(
+                (dropout): Dropout(p=0.1, inplace=False)
+                (rel_pos): RelativePositionalEmbedding()
+              )
+              (to_q): Linear(in_features=128, out_features=128, bias=True)
+              (to_k): Linear(in_features=128, out_features=128, bias=True)
+              (to_v): Linear(in_features=128, out_features=128, bias=True)
+              (to_out): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): EncoderLayer(
+          (att): Att_Choice(
+            (att): SelfAttention(
+              (fast_attention): FastAttention(
+                (kernel_fn): ReLU()
+              )
+              (local_attn): LocalAttention(
+                (dropout): Dropout(p=0.1, inplace=False)
+                (rel_pos): RelativePositionalEmbedding()
+              )
+              (to_q): Linear(in_features=128, out_features=128, bias=True)
+              (to_k): Linear(in_features=128, out_features=128, bias=True)
+              (to_v): Linear(in_features=128, out_features=128, bias=True)
+              (to_out): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (3): EncoderLayer(
+          (att): Att_Choice(
+            (att): SelfAttention(
+              (fast_attention): FastAttention(
+                (kernel_fn): ReLU()
+              )
+              (local_attn): LocalAttention(
+                (dropout): Dropout(p=0.1, inplace=False)
+                (rel_pos): RelativePositionalEmbedding()
+              )
+              (to_q): Linear(in_features=128, out_features=128, bias=True)
+              (to_k): Linear(in_features=128, out_features=128, bias=True)
+              (to_v): Linear(in_features=128, out_features=128, bias=True)
+              (to_out): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+    )
+    (decoder): Decoder(
+      (resize_module): PositionwiseFeedForward(
+        (w_1): Linear(in_features=128, out_features=128, bias=True)
+        (w_2): Linear(in_features=128, out_features=128, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (layers): ModuleList(
+        (0): DecoderLayer(
+          (att): Att_Choice(
+            (att): Softmax_att(
+              (att): MultiheadAttention(
+                (out_proj): _LinearWithBias(in_features=128, out_features=128, bias=True)
+              )
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (1): DecoderLayer(
+          (att): Att_Choice(
+            (att): Softmax_att(
+              (att): MultiheadAttention(
+                (out_proj): _LinearWithBias(in_features=128, out_features=128, bias=True)
+              )
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+        (2): DecoderLayer(
+          (att): Att_Choice(
+            (att): Softmax_att(
+              (att): MultiheadAttention(
+                (out_proj): _LinearWithBias(in_features=128, out_features=128, bias=True)
+              )
+            )
+          )
+          (ff): FeedForward(
+            (w1): Linear(in_features=128, out_features=512, bias=True)
+            (act): Swish()
+            (dropout): Dropout(p=0.1, inplace=False)
+            (w2): Linear(in_features=256, out_features=128, bias=True)
+          )
+          (dropout1): Dropout(p=0.1, inplace=False)
+          (dropout2): Dropout(p=0.1, inplace=False)
+          (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+    )
+    (ff_control): PositionwiseFeedForward(
+      (w_1): Linear(in_features=128, out_features=128, bias=True)
+      (w_2): Linear(in_features=128, out_features=128, bias=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (loss): MSELoss()
+)

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+pip install librosa
+pip install torchaudio
+
+pip install pytorch-model-summary
+pip install allennlp
+
+pip install phonemizer
+apt-get install festival espeak-ng mbrola
+
+pip install pytorch-lightning
+pip install comet-ml
+pip install local-attention
+pip install einops
+
+
